@@ -22,7 +22,21 @@ render "\phantom{a}"
 open "$dest"
 
 while true; do
-  read -p "> " -er tex
+  tex=""
+  cr=$'\n'
+
+  # Read LaTeX, treating lines prefixed by '  ' as part of a multi-line string.
+  while true; do
+    IFS=""
+    read -p "> " -er chunk
+    if [[ "${chunk:0:2}" == "  " ]]; then
+      tex=$"$tex$cr${chunk:2}"
+    else
+      tex=$"$tex$cr$chunk"
+      break
+    fi
+  done
+
   render "$tex"
 done
 
