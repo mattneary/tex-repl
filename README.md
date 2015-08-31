@@ -6,3 +6,9 @@ $ tex-repl
 > $$e^{i\pi} = -1$$
 ```
 
+# Install
+
+```sh
+$ npm install -g tex-repl
+```
+
