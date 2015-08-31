@@ -1,0 +1,11 @@
+{
+  "name": "tex-repl",
+  "version": "0.1.0",
+  "description": "Instantly view the results of a LaTeX fragment.",
+  "main": "repl.sh",
+  "author": "Matt Neary",
+  "license": "GPLv2",
+  "bin": {
+    "tex-repl": "repl.sh"
+  }
+}
